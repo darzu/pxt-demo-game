@@ -1,10 +1,10 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (mySprite.vy == 0) {
-        mySprite.vy = -250
+    if (dog.vy == 0) {
+        dog.vy = -250
     }
 })
-let mySprite: Sprite = null
-mySprite = sprites.create(img`
+let dog: Sprite = null
+dog = sprites.create(img`
     . . 4 4 4 . . . . 4 4 4 . . . .
     . 4 5 5 5 e . . e 5 5 5 4 . . .
     4 5 5 5 5 5 e e 5 5 5 5 5 4 . .
@@ -20,7 +20,7 @@ mySprite = sprites.create(img`
     . . . f 5 f f f 5 f f 5 f . . .
     . . . f f . . f f . . f f . . .
 `, SpriteKind.Player)
-controller.moveSprite(mySprite, 100, 0)
+controller.moveSprite(dog, 100, 0)
 scene.setBackgroundColor(9)
 scene.setBackgroundImage(img`
     9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
@@ -190,10 +190,10 @@ scene.setTile(8, img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
 `, true)
-mySprite.ay = 600
-scene.cameraFollowSprite(mySprite)
+dog.ay = 600
+scene.cameraFollowSprite(dog)
 game.onUpdate(function () {
-    if (mySprite.y > scene.screenHeight()) {
+    if (dog.y > scene.screenHeight()) {
         game.over(false)
     }
 })
